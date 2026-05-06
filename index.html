@@ -6,100 +6,279 @@
     <title>Shkim7532's Research Portfolio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
         }
+
+        /* Language Toggle Logic */
+        body[data-lang="en"] .lang-ko { display: none; }
+        body[data-lang="ko"] .lang-en { display: none; }
+
+        /* Header & Navigation */
         header {
             background: #007acc;
             color: #fff;
-            padding: 20px 0;
-            text-align: center;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        header h1 a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 30px;
         }
         nav {
-            margin-top: 10px;
+            display: flex;
+            gap: 20px;
         }
         nav a {
             color: #fff;
             text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
+            font-weight: 500;
+            font-size: 1.1em;
+            transition: color 0.3s;
         }
+        nav a:hover {
+            color: #d1e8ff;
+        }
+        .lang-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .lang-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            color: #fff;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 6px;
+            font-size: 0.95em;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: background 0.3s, border-color 0.3s;
+        }
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
+        }
+        .lang-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+        .lang-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            margin-top: 8px;
+            background-color: #fff;
+            min-width: 120px;
+            box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            z-index: 1000;
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+        .lang-menu.show {
+            display: block;
+            animation: fadeIn 0.2s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .lang-menu a {
+            color: #333;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            font-size: 0.95em;
+            text-align: left;
+            transition: background-color 0.2s, color 0.2s;
+            font-weight: 500;
+        }
+        .lang-menu a:hover {
+            background-color: #f8f9fa;
+            color: #007acc;
+        }
+
+        /* Layout */
         .container {
-            padding: 20px;
+            padding: 40px 30px;
             max-width: 1000px;
             margin: auto;
             background: #fff;
-            margin-top: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 8px;
         }
         section {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            scroll-margin-top: 80px; /* Offset for sticky header */
         }
-        h1, h2, h3 {
+        section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        h2 {
             color: #007acc;
+            margin-top: 0;
+            font-size: 1.8em;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 15px;
         }
         footer {
             text-align: center;
             padding: 20px;
-            margin-top: 20px;
             font-size: 0.9em;
             color: #666;
+            background: #e9e9e9;
         }
         .contact-links img {
-            width: 20px;
+            width: 24px;
             vertical-align: middle;
             margin-right: 8px;
+            transition: transform 0.3s;
         }
         .contact-links a {
             text-decoration: none;
+            color: #333;
+            margin-right: 20px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+        }
+        .contact-links a:hover {
             color: #007acc;
-            margin-right: 15px;
+        }
+        .contact-links a:hover img {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 15px 20px;
+                gap: 15px;
+            }
+            .header-right {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
         }
     </style>
 </head>
-<body>
-    <header>
-        <h1>Shkim7532's Research Portfolio</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#research">Research</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
+<body data-lang="en">
+    <header id="home">
+        <h1><a href="#"><span class="lang-en">Shkim7532's Portfolio</span><span class="lang-ko">Shkim7532의 포트폴리오</span></a></h1>
+        <div class="header-right">
+            <nav>
+                <a href="#home"><span class="lang-en">Home</span><span class="lang-ko">홈</span></a>
+                <a href="#research"><span class="lang-en">Research interest</span><span class="lang-ko">연구 관심사</span></a>
+                <a href="#projects"><span class="lang-en">Projects</span><span class="lang-ko">프로젝트</span></a>
+                <a href="#contact"><span class="lang-en">Contact</span><span class="lang-ko">연락처</span></a>
+            </nav>
+            <div class="lang-dropdown">
+                <button class="lang-btn" onclick="toggleDropdown()">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/></svg>
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width: 16px; height: 16px;"><path d="M7 10l5 5 5-5z"/></svg>
+                </button>
+                <div class="lang-menu" id="langMenu">
+                    <a href="#" onclick="setLanguage('en'); return false;">English</a>
+                    <a href="#" onclick="setLanguage('ko'); return false;">한국어</a>
+                </div>
+            </div>
+        </div>
     </header>
 
     <div class="container">
         <section id="about">
-            <h2>About Me</h2>
-            <p>Hello! I'm a robotics researcher with a passion for dynamic control, optimization algorithms, and intelligent robot systems. This website showcases my research, projects, and publications.</p>
+            <h2><span class="lang-en">About Me</span><span class="lang-ko">소개</span></h2>
+            <p>
+                <span class="lang-en">Hello! I'm a robotics researcher with a passion for dynamic control, optimization algorithms, and intelligent robot systems. This website showcases my research, projects, and publications.</span>
+                <span class="lang-ko">안녕하세요! 저는 동역학 제어, 최적화 알고리즘, 지능형 로봇 시스템에 열정을 가진 로봇 공학 연구원입니다. 이 웹사이트는 저의 연구, 프로젝트, 출판물을 소개합니다.</span>
+            </p>
         </section>
 
         <section id="research">
-            <h2>Research Interests</h2>
+            <h2><span class="lang-en">Research Interests</span><span class="lang-ko">연구 관심사</span></h2>
             <ul>
-                <li>Quadruped Robot Locomotion</li>
-                <li>Multi-DOF Robotic Arm Control</li>
-                <li>QP-based Motion Optimization</li>
-                <li>Whole-body Motion Planning</li>
+                <li>
+                    <span class="lang-en">Quadruped Robot Locomotion</span>
+                    <span class="lang-ko">4족 보행 로봇 제어</span>
+                </li>
+                <li>
+                    <span class="lang-en">Multi-DOF Robotic Arm Control</span>
+                    <span class="lang-ko">다자유도 로봇 팔 제어</span>
+                </li>
+                <li>
+                    <span class="lang-en">QP-based Motion Optimization</span>
+                    <span class="lang-ko">QP 기반 모션 최적화</span>
+                </li>
+                <li>
+                    <span class="lang-en">Whole-body Motion Planning</span>
+                    <span class="lang-ko">전신 모션 계획</span>
+                </li>
             </ul>
         </section>
 
         <section id="projects">
-            <h2>Major Projects</h2>
+            <h2><span class="lang-en">Major Projects</span><span class="lang-ko">주요 프로젝트</span></h2>
             <ul>
-                <li><strong>Whole-body Control for Quadruped Robot with Manipulator</strong><br> Developed QP-based motion coordination algorithms integrating locomotion and manipulation tasks.</li>
-                <li><strong>Simulation Environments with MuJoCo and RBDL</strong><br> Built dynamic simulation setups for real-time robot control experiments.</li>
-                <li><strong>Government Research Projects</strong><br> Participated in firefighting robotics, civil-military cooperation projects, and rapid deployment systems.</li>
+                <li>
+                    <strong><span class="lang-en">Whole-body Control for Quadruped Robot with Manipulator</span><span class="lang-ko">매니퓰레이터가 장착된 4족 보행 로봇의 전신 제어</span></strong><br>
+                    <span class="lang-en">Developed QP-based motion coordination algorithms integrating locomotion and manipulation tasks.</span>
+                    <span class="lang-ko">이동 및 조작 작업을 통합하는 QP 기반 모션 조정 알고리즘을 개발했습니다.</span>
+                </li>
+                <li>
+                    <strong><span class="lang-en">Simulation Environments with MuJoCo and RBDL</span><span class="lang-ko">MuJoCo 및 RBDL을 활용한 시뮬레이션 환경</span></strong><br>
+                    <span class="lang-en">Built dynamic simulation setups for real-time robot control experiments.</span>
+                    <span class="lang-ko">실시간 로봇 제어 실험을 위한 동역학 시뮬레이션 환경을 구축했습니다.</span>
+                </li>
+                <li>
+                    <strong><span class="lang-en">Government Research Projects</span><span class="lang-ko">정부 연구 과제</span></strong><br>
+                    <span class="lang-en">Participated in firefighting robotics, civil-military cooperation projects, and rapid deployment systems.</span>
+                    <span class="lang-ko">소방 로봇, 민군 협력 과제 및 신속 전개 시스템 프로젝트에 참여했습니다.</span>
+                </li>
             </ul>
         </section>
 
         <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: shkim7532@gmail.com</p>
+            <h2><span class="lang-en">Contact</span><span class="lang-ko">연락처</span></h2>
+            <p>
+                <span class="lang-en">Email:</span><span class="lang-ko">이메일:</span> shkim7532@gmail.com
+            </p>
             <div class="contact-links">
                 <a href="https://github.com/shkim7532" target="_blank">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Logo">GitHub
@@ -114,5 +293,30 @@
     <footer>
         &copy; 2025 Shkim7532. All rights reserved.
     </footer>
+
+    <script>
+        function toggleDropdown() {
+            document.getElementById("langMenu").classList.toggle("show");
+        }
+
+        function setLanguage(lang) {
+            document.body.setAttribute('data-lang', lang);
+            document.documentElement.lang = lang;
+            document.getElementById("langMenu").classList.remove("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.closest('.lang-btn')) {
+                var dropdowns = document.getElementsByClassName("lang-menu");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 </html>

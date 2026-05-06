@@ -220,6 +220,121 @@
             transform: scale(1.1);
         }
 
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        .project-card {
+            display: flex;
+            flex-direction: column;
+        }
+        .project-image {
+            width: 100%;
+            height: 250px;
+            background-color: #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            object-fit: cover;
+            border: 1px solid #eee;
+        }
+        .project-title {
+            font-size: 1.4em;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-decoration: underline;
+            text-underline-offset: 6px;
+            text-decoration-color: #ccc;
+        }
+        .project-description {
+            font-size: 0.95em;
+            color: #555;
+            flex-grow: 1;
+            margin-bottom: 20px;
+        }
+        .project-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .video-thumbnail {
+            position: relative;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .video-thumbnail img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            display: block;
+        }
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(0,0,0,0.6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+        .video-thumbnail:hover .play-icon {
+            background: #ff0000;
+        }
+        .play-icon svg {
+            fill: #fff;
+            width: 30px;
+            height: 30px;
+            margin-left: 5px;
+        }
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .modal-overlay.show {
+            display: flex;
+            opacity: 1;
+        }
+        .modal-content {
+            position: relative;
+            width: 90%;
+            max-width: 1000px;
+            aspect-ratio: 16 / 9;
+            background: #000;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+        .modal-content iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+        .modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: #fff;
+            font-size: 35px;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+        }
+
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -233,6 +348,9 @@
             nav {
                 flex-wrap: wrap;
                 justify-content: center;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
             .about-content {
                 flex-direction: column;
@@ -335,24 +453,115 @@
         </section>
 
         <section id="projects">
-            <h2><span class="lang-en">Major Projects</span><span class="lang-ko">주요 프로젝트</span></h2>
-            <ul>
-                <li>
-                    <strong><span class="lang-en">Whole-body Control for Quadruped Robot with Manipulator</span><span class="lang-ko">매니퓰레이터가 장착된 4족 보행 로봇의 전신 제어</span></strong><br>
-                    <span class="lang-en">Developed QP-based motion coordination algorithms integrating locomotion and manipulation tasks.</span>
-                    <span class="lang-ko">이동 및 조작 작업을 통합하는 QP 기반 모션 조정 알고리즘을 개발했습니다.</span>
-                </li>
-                <li>
-                    <strong><span class="lang-en">Simulation Environments with MuJoCo and RBDL</span><span class="lang-ko">MuJoCo 및 RBDL을 활용한 시뮬레이션 환경</span></strong><br>
-                    <span class="lang-en">Built dynamic simulation setups for real-time robot control experiments.</span>
-                    <span class="lang-ko">실시간 로봇 제어 실험을 위한 동역학 시뮬레이션 환경을 구축했습니다.</span>
-                </li>
-                <li>
-                    <strong><span class="lang-en">Government Research Projects</span><span class="lang-ko">정부 연구 과제</span></strong><br>
-                    <span class="lang-en">Participated in firefighting robotics, civil-military cooperation projects, and rapid deployment systems.</span>
-                    <span class="lang-ko">소방 로봇, 민군 협력 과제 및 신속 전개 시스템 프로젝트에 참여했습니다.</span>
-                </li>
-            </ul>
+            <h2><span class="lang-en">Projects</span><span class="lang-ko">프로젝트</span></h2>
+            <div class="projects-grid">
+                <!-- Example 1 -->
+                <div class="project-card">
+                    <div class="video-thumbnail" onclick="openVideoModal('Ug8kAqgXcaI')">
+                        <img src="https://img.youtube.com/vi/Ug8kAqgXcaI/hqdefault.jpg" alt="Video Thumbnail">
+                        <div class="play-icon">
+                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                    <div class="project-title">
+                        <span class="lang-en">QP-Based Whole-Body Control for Quadruped Manipulation</span>
+                        <span class="lang-ko">매니퓰레이터를 장착한 4족 보행 로봇을 위한 QP 기반 전신 제어</span>
+                    </div>
+                    <div class="project-description">
+                        <span class="lang-en">
+                            Developed a QP-based whole-body control framework for a quadruped robot equipped with a 6-DOF manipulator.
+                            <ul>
+                                <li>Solved coordinated 12-DOF whole-body motion by combining manipulator and quadruped Jacobians under end-effector control constraints.</li>
+                                <li>Controlled end-effector position and orientation while the manipulator base continuously changed due to quadruped body motion and posture variation.</li>
+                                <li>Stabilized the overall system by regulating the combined CoM of the manipulator and quadruped toward the center of the robot body.</li>
+                                <li>Implemented integrated locomotion-manipulation control using optimization-based control and real-time state feedback.</li>
+                                <li>Developed multiple control modes, including automatic quadruped motion for maintaining manipulator workspace constraints and fixed global end-effector control while the robot body moved independently.</li>
+                            </ul>
+                        </span>
+                        <span class="lang-ko">
+                            6자유도 매니퓰레이터가 장착된 4족 보행 로봇을 위한 QP 기반 전신 제어(Whole-Body Control) 프레임워크를 개발했습니다.
+                            <ul>
+                                <li>엔드이펙터 제어 제약 조건 하에서 매니퓰레이터와 4족 보행 로봇의 자코비안을 결합하여 12자유도 전신 모션 제어를 수행했습니다.</li>
+                                <li>4족 보행 로봇의 신체 움직임 및 자세 변화로 인해 매니퓰레이터의 베이스가 지속적으로 변하는 상황에서도 엔드이펙터의 위치와 방향을 제어했습니다.</li>
+                                <li>매니퓰레이터와 4족 보행 로봇의 결합된 무게중심(CoM)을 로봇 중심부로 조절하여 전체 시스템의 안정화를 달성했습니다.</li>
+                                <li>최적화 기반 제어 및 실시간 상태 피드백을 활용하여 이동 및 조작 통합 제어를 구현했습니다.</li>
+                                <li>매니퓰레이터의 작업 공간 제약을 유지하기 위한 4족 보행 로봇의 자동 모션 생성, 바디가 움직이는 동안에도 고정된 전역 좌표계 엔드이펙터 제어 등 다양한 제어 모드를 개발했습니다.</li>
+                            </ul>
+                        </span>
+                    </div>
+                    <div class="project-keywords">
+                        <span class="keyword-badge">Whole-Body Control</span>
+                        <span class="keyword-badge">QP</span>
+                        <span class="keyword-badge">Quadruped</span>
+                        <span class="keyword-badge">Manipulation</span>
+                    </div>
+                </div>
+                <!-- Example 2 -->
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/600x400?text=Project+2" alt="Project 2" class="project-image">
+                    <div class="project-title"><span class="lang-en">Example 2</span><span class="lang-ko">예시 2</span></div>
+                    <div class="project-description">
+                        <span class="lang-en">Modeled the Forward & Inverse Kinematics, Jacobian & Velocity Kinematics. Designed Jerk Optimized Trajectories using Quintic Polynomial.</span>
+                        <span class="lang-ko">정기구학 및 역기구학, 자코비안을 모델링했습니다. 저크 최소화 궤적을 설계했습니다.</span>
+                    </div>
+                    <div class="project-keywords">
+                        <span class="keyword-badge">Kinematics</span>
+                        <span class="keyword-badge">Simulation</span>
+                    </div>
+                </div>
+                <!-- Example 3 -->
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/600x400?text=Project+3" alt="Project 3" class="project-image">
+                    <div class="project-title"><span class="lang-en">Example 3</span><span class="lang-ko">예시 3</span></div>
+                    <div class="project-description">
+                        <span class="lang-en">Project description goes here. This is a placeholder for project details and achievements.</span>
+                        <span class="lang-ko">프로젝트 설명이 들어갈 자리입니다. 이 부분에 상세 내용과 성과를 작성하세요.</span>
+                    </div>
+                    <div class="project-keywords">
+                        <span class="keyword-badge">Keyword 1</span>
+                        <span class="keyword-badge">Keyword 2</span>
+                    </div>
+                </div>
+                <!-- Example 4 -->
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/600x400?text=Project+4" alt="Project 4" class="project-image">
+                    <div class="project-title"><span class="lang-en">Example 4</span><span class="lang-ko">예시 4</span></div>
+                    <div class="project-description">
+                        <span class="lang-en">Project description goes here. This is a placeholder for project details and achievements.</span>
+                        <span class="lang-ko">프로젝트 설명이 들어갈 자리입니다. 이 부분에 상세 내용과 성과를 작성하세요.</span>
+                    </div>
+                    <div class="project-keywords">
+                        <span class="keyword-badge">Keyword 1</span>
+                        <span class="keyword-badge">Keyword 2</span>
+                    </div>
+                </div>
+                <!-- Example 5 -->
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/600x400?text=Project+5" alt="Project 5" class="project-image">
+                    <div class="project-title"><span class="lang-en">Example 5</span><span class="lang-ko">예시 5</span></div>
+                    <div class="project-description">
+                        <span class="lang-en">Project description goes here. This is a placeholder for project details and achievements.</span>
+                        <span class="lang-ko">프로젝트 설명이 들어갈 자리입니다. 이 부분에 상세 내용과 성과를 작성하세요.</span>
+                    </div>
+                    <div class="project-keywords">
+                        <span class="keyword-badge">Keyword 1</span>
+                        <span class="keyword-badge">Keyword 2</span>
+                    </div>
+                </div>
+                <!-- Example 6 -->
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/600x400?text=Project+6" alt="Project 6" class="project-image">
+                    <div class="project-title"><span class="lang-en">Example 6</span><span class="lang-ko">예시 6</span></div>
+                    <div class="project-description">
+                        <span class="lang-en">Project description goes here. This is a placeholder for project details and achievements.</span>
+                        <span class="lang-ko">프로젝트 설명이 들어갈 자리입니다. 이 부분에 상세 내용과 성과를 작성하세요.</span>
+                    </div>
+                    <div class="project-keywords">
+                        <span class="keyword-badge">Keyword 1</span>
+                        <span class="keyword-badge">Keyword 2</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="contact">
@@ -375,7 +584,34 @@
         &copy; 2025 Shkim7532. All rights reserved.
     </footer>
 
+    <!-- Video Modal -->
+    <div class="modal-overlay" id="videoModal" onclick="closeVideoModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeVideoModal()">&times;</button>
+            <iframe id="modalIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </div>
+
     <script>
+        function openVideoModal(videoId) {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('modalIframe');
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            modal.style.display = 'flex';
+            setTimeout(() => modal.classList.add('show'), 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('modalIframe');
+            modal.classList.remove('show');
+            setTimeout(() => {
+                modal.style.display = 'none';
+                iframe.src = '';
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
         function toggleDropdown() {
             document.getElementById("langMenu").classList.toggle("show");
         }

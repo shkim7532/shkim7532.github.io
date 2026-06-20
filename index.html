@@ -537,54 +537,165 @@
                 </div>
                 <!-- Example 3 -->
                 <div class="project-card">
-                    <img src="https://via.placeholder.com/600x400?text=Project+3" alt="Project 3" class="project-image">
-                    <div class="project-title"><span class="lang-en">Example 3</span><span class="lang-ko">예시 3</span></div>
+                    <img src="images/project3.png" alt="RL-Based Whole-Body Control" class="project-image">
+                    <div class="project-title">
+                        <span class="lang-en">RL-Based Whole-Body Control</span>
+                        <span class="lang-ko">강화학습 기반 전신 제어</span>
+                    </div>
                     <div class="project-description">
-                        <span class="lang-en">Project description goes here. This is a placeholder for project details and achievements.</span>
-                        <span class="lang-ko">프로젝트 설명이 들어갈 자리입니다. 이 부분에 상세 내용과 성과를 작성하세요.</span>
+                        <span class="lang-en">
+                            Developed a reinforcement learning framework for coordinated quadruped-manipulator control based on a pre-trained locomotion policy.
+                            <ul>
+                                <li>Established a robust locomotion backbone through a staged training curriculum and leveraged transfer learning to incorporate manipulator actions into whole-body behaviors.</li>
+                                <li>Designed training environments for simultaneous locomotion and manipulation while preserving locomotion stability and dynamic balance.</li>
+                                <li>Explored coordinated whole-body strategies by sharing body posture, balance, and manipulation objectives across the quadruped and manipulator.</li>
+                                <li>Developing a pre-trained policy foundation for diverse quadruped manipulation tasks, aiming to serve as a base model for various downstream applications in the future.</li>
+                                <li>Investigating sim-to-real transfer and policy robustness for real-world mobile manipulation scenarios.</li>
+                            </ul>
+                        </span>
+                        <span class="lang-ko">
+                            사전 학습된 보행 정책(locomotion policy)을 기반으로 4족 보행 로봇과 매니퓰레이터의 협조 제어를 위한 강화학습 프레임워크를 개발했습니다.
+                            <ul>
+                                <li>단계적 학습 커리큘럼(staged training curriculum)을 통해 강인한 보행 백본을 구축하고, 전이 학습(transfer learning)을 활용하여 매니퓰레이터 동작을 전신 행동(whole-body behaviors)에 통합했습니다.</li>
+                                <li>보행 안정성과 동적 균형을 유지하면서 보행 및 조작을 동시에 수행할 수 있는 학습 환경을 설계했습니다.</li>
+                                <li>4족 보행 로봇과 매니퓰레이터 간에 자세, 균형 및 조작 목표를 공유하여 협조적인 전신 제어 전략을 탐구했습니다.</li>
+                                <li>다양한 4족 보행 매니퓰레이션 작업을 위한 사전 학습 모델(pre-train model)을 개발 중이며, 향후 다양한 작업을 수행할 때 기초 모델로 활용되도록 할 예정입니다.</li>
+                                <li>실제 환경의 모바일 매니퓰레이션 시나리오를 위한 Sim-to-Real 전이 및 정책 강인성을 연구 중입니다.</li>
+                            </ul>
+                        </span>
                     </div>
                     <div class="project-keywords">
-                        <span class="keyword-badge">Keyword 1</span>
-                        <span class="keyword-badge">Keyword 2</span>
+                        <span class="keyword-badge">Reinforcement Learning</span>
+                        <span class="keyword-badge">Transfer Learning</span>
+                        <span class="keyword-badge">Whole-Body Control</span>
+                        <span class="keyword-badge">Quadruped Manipulation</span>
+                        <span class="keyword-badge">Sim-to-Real</span>
                     </div>
                 </div>
                 <!-- Example 4 -->
                 <div class="project-card">
-                    <img src="https://via.placeholder.com/600x400?text=Project+4" alt="Project 4" class="project-image">
-                    <div class="project-title"><span class="lang-en">Example 4</span><span class="lang-ko">예시 4</span></div>
+                    <img src="images/project4.jpg" alt="VLA for Mobile Manipulation" class="project-image">
+                    <div class="project-title">
+                        <span class="lang-en">Vision-Language-Action(VLA) for Mobile Manipulation</span>
+                        <span class="lang-ko">모바일 매니퓰레이션을 위한 Vision-Language-Action (VLA)</span>
+                    </div>
                     <div class="project-description">
-                        <span class="lang-en">Project description goes here. This is a placeholder for project details and achievements.</span>
-                        <span class="lang-ko">프로젝트 설명이 들어갈 자리입니다. 이 부분에 상세 내용과 성과를 작성하세요.</span>
+                        <span class="lang-en">
+                            Developed a data collection and training pipeline for Vision-Language-Action (VLA) models on real robotic platforms.
+                            <ul>
+                                <li>Built a LeRobot-based data acquisition framework capable of recording robot joint states, front-camera images, and hand-camera observations for manipulation tasks.</li>
+                                <li>Established an end-to-end workflow from real-world data collection to VLA model training and evaluation.</li>
+                                <li>Fine-tuned and benchmarked foundation models including ACT, SmolVLA, π0.5, and GR00T N1.5 on mobile manipulation tasks.</li>
+                                <li>Implemented both onboard and remote inference pipelines, enabling VLA deployment on embedded robot computers as well as RTX 5090 workstations for performance and latency evaluation.</li>
+                                <li>Exploring scalable data collection and model adaptation strategies for real-world robotic manipulation.</li>
+                            </ul>
+                        </span>
+                        <span class="lang-ko">
+                            실제 로봇 플랫폼에서 Vision-Language-Action (VLA) 모델을 위한 데이터 수집 및 학습 파이프라인을 개발했습니다.
+                            <ul>
+                                <li>매니퓰레이션 작업을 위해 로봇의 관절 상태, 전면 카메라 이미지 및 핸드 카메라 관측을 기록할 수 있는 LeRobot 기반 데이터 수집 프레임워크를 구축했습니다.</li>
+                                <li>실제 환경의 데이터 수집부터 VLA 모델 학습 및 평가에 이르는 엔드투엔드(end-to-end) 워크플로우를 구축했습니다.</li>
+                                <li>모바일 매니퓰레이션 작업에 대해 ACT, SmolVLA, π0.5, GR00T N1.5를 포함한 파운데이션 모델을 미세 조정(fine-tuning) 및 벤치마킹했습니다.</li>
+                                <li>온보드(onboard) 및 원격 추론 파이프라인을 모두 구현하여, 성능 및 지연 시간(latency) 평가를 위해 임베디드 로봇 컴퓨터뿐만 아니라 RTX 5090 워크스테이션에도 VLA를 배포할 수 있도록 했습니다.</li>
+                                <li>실제 환경의 로봇 조작을 위한 확장 가능한 데이터 수집 및 모델 적응 전략을 연구 중입니다.</li>
+                            </ul>
+                        </span>
                     </div>
                     <div class="project-keywords">
-                        <span class="keyword-badge">Keyword 1</span>
-                        <span class="keyword-badge">Keyword 2</span>
+                        <span class="keyword-badge">Vision-Language-Action</span>
+                        <span class="keyword-badge">Robot Learning</span>
+                        <span class="keyword-badge">LeRobot</span>
+                        <span class="keyword-badge">Mobile Manipulation</span>
+                        <span class="keyword-badge">Edge AI</span>
+                        <span class="keyword-badge">Onboard & Remote Inference</span>
                     </div>
                 </div>
                 <!-- Example 5 -->
                 <div class="project-card">
-                    <img src="https://via.placeholder.com/600x400?text=Project+5" alt="Project 5" class="project-image">
-                    <div class="project-title"><span class="lang-en">Example 5</span><span class="lang-ko">예시 5</span></div>
+                    <img src="images/project5.png" alt="Humanoid Walking Pattern Generation" class="project-image">
+                    <div class="project-title">
+                        <span class="lang-en">Humanoid Walking Pattern Generation and Stability Control</span>
+                        <span class="lang-ko">휴머노이드 보행 패턴 생성 및 안정성 제어</span>
+                    </div>
                     <div class="project-description">
-                        <span class="lang-en">Project description goes here. This is a placeholder for project details and achievements.</span>
-                        <span class="lang-ko">프로젝트 설명이 들어갈 자리입니다. 이 부분에 상세 내용과 성과를 작성하세요.</span>
+                        <span class="lang-en">
+                            Developed a walking pattern generation and stabilization framework for humanoid robots based on the Linear Inverted Pendulum Model (LIPM) and Zero Moment Point (ZMP) theory.
+                            <ul>
+                                <li>Developed a 3D-LIPM-based gait pattern generator for dynamically stable biped locomotion.</li>
+                                <li>Designed a ZMP stabilization controller to maintain balance during walking motions.</li>
+                                <li>Implemented whole-body posture generation using Jacobian-based inverse kinematics.</li>
+                                <li>Built a simulation framework in Webots for gait generation and stability evaluation.</li>
+                                <li>Validated robust walking performance under various gait cycle and locomotion conditions.</li>
+                                <li>Published research in an SCI-indexed international journal (JINT).</li>
+                            </ul>
+                            <a href="https://link.springer.com/article/10.1007/s10846-021-01468-1" target="_blank" style="text-decoration: underline; color: #007acc; font-weight: bold;">[Publication Link]</a>
+                        </span>
+                        <span class="lang-ko">
+                            선형 역진자 모델(LIPM)과 ZMP(Zero Moment Point) 이론을 기반으로 휴머노이드 로봇을 위한 보행 패턴 생성 및 안정화 프레임워크를 개발했습니다.
+                            <ul>
+                                <li>동적으로 안정한 이족 보행을 위해 3D-LIPM 기반의 보행 패턴 생성기를 개발했습니다.</li>
+                                <li>보행 동작 중 균형을 유지하기 위한 ZMP 안정화 제어기를 설계했습니다.</li>
+                                <li>자코비안 기반의 역운동학(Inverse Kinematics)을 사용하여 전신 자세 생성을 구현했습니다.</li>
+                                <li>Webots 환경에서 보행 생성 및 안정성 평가를 위한 시뮬레이션 프레임워크를 구축했습니다.</li>
+                                <li>다양한 보행 주기 및 보행 조건에서 강인한 보행 성능을 검증했습니다.</li>
+                                <li>SCI급 국제 학술지(JINT)에 연구 논문을 게재했습니다.</li>
+                            </ul>
+                            <a href="https://link.springer.com/article/10.1007/s10846-021-01468-1" target="_blank" style="text-decoration: underline; color: #007acc; font-weight: bold;">[논문 링크]</a>
+                        </span>
                     </div>
                     <div class="project-keywords">
-                        <span class="keyword-badge">Keyword 1</span>
-                        <span class="keyword-badge">Keyword 2</span>
+                        <span class="keyword-badge">Humanoid Robot</span>
+                        <span class="keyword-badge">Biped Walking</span>
+                        <span class="keyword-badge">Walking Pattern Generation</span>
+                        <span class="keyword-badge">LIPM</span>
+                        <span class="keyword-badge">ZMP Control</span>
+                        <span class="keyword-badge">Inverse Kinematics</span>
+                        <span class="keyword-badge">Robot Dynamics</span>
+                        <span class="keyword-badge">Webots</span>
                     </div>
                 </div>
                 <!-- Example 6 -->
                 <div class="project-card">
-                    <img src="https://via.placeholder.com/600x400?text=Project+6" alt="Project 6" class="project-image">
-                    <div class="project-title"><span class="lang-en">Example 6</span><span class="lang-ko">예시 6</span></div>
+                    <img src="images/project6.png" alt="Ski Robot Navigation and Stability Control" class="project-image">
+                    <div class="project-title">
+                        <span class="lang-en">Ski Robot Navigation and Stability Control</span>
+                        <span class="lang-ko">스키 로봇 내비게이션 및 안정성 제어</span>
+                    </div>
                     <div class="project-description">
-                        <span class="lang-en">Project description goes here. This is a placeholder for project details and achievements.</span>
-                        <span class="lang-ko">프로젝트 설명이 들어갈 자리입니다. 이 부분에 상세 내용과 성과를 작성하세요.</span>
+                        <span class="lang-en">
+                            Developed autonomous navigation and stability control algorithms for a humanoid alpine skiing robot using LiDAR-based perception and ZMP stabilization.
+                            <ul>
+                                <li>Developed a LiDAR-based gate detection and autonomous navigation algorithm for alpine skiing tasks.</li>
+                                <li>Designed a carving-turn control framework based on ski turning radius and body lean angle modeling.</li>
+                                <li>Implemented ZMP-based stability control using FSR sensor feedback to prevent falls during dynamic turns.</li>
+                                <li>Built a skiing simulator incorporating ski dynamics, slope conditions, and modeled snow interaction forces.</li>
+                                <li>Evaluated navigation and stability performance across varying slope angles and friction conditions.</li>
+                                <li>Published research in an SCI-indexed international journal (Sensors).</li>
+                            </ul>
+                            <a href="https://www.mdpi.com/1424-8220/19/17/3664" target="_blank" style="text-decoration: underline; color: #007acc; font-weight: bold;">[Publication Link]</a>
+                        </span>
+                        <span class="lang-ko">
+                            LiDAR 기반 인지 및 ZMP 안정화를 활용하여 휴머노이드 알파인 스키 로봇을 위한 자율 주행 및 안정성 제어 알고리즘을 개발했습니다.
+                            <ul>
+                                <li>알파인 스키 작업을 위한 LiDAR 기반의 기문 인식 및 자율 주행 알고리즘을 개발했습니다.</li>
+                                <li>스키 회전 반경과 신체 기울기 모델링을 기반으로 한 카빙 턴(carving-turn) 제어 프레임워크를 설계했습니다.</li>
+                                <li>동적인 턴 동작 중 넘어짐을 방지하기 위해 FSR 센서 피드백을 활용한 ZMP 기반 안정성 제어를 구현했습니다.</li>
+                                <li>스키 동역학, 슬로프 조건 및 설면 상호작용 힘 모델링을 포함한 스키 시뮬레이터를 구축했습니다.</li>
+                                <li>다양한 슬로프 각도 및 마찰 조건에서 주행 및 안정성 성능을 평가했습니다.</li>
+                                <li>SCI급 국제 학술지(Sensors)에 연구 논문을 게재했습니다.</li>
+                            </ul>
+                            <a href="https://www.mdpi.com/1424-8220/19/17/3664" target="_blank" style="text-decoration: underline; color: #007acc; font-weight: bold;">[논문 링크]</a>
+                        </span>
                     </div>
                     <div class="project-keywords">
-                        <span class="keyword-badge">Keyword 1</span>
-                        <span class="keyword-badge">Keyword 2</span>
+                        <span class="keyword-badge">Humanoid Robot</span>
+                        <span class="keyword-badge">Robot Navigation</span>
+                        <span class="keyword-badge">LiDAR</span>
+                        <span class="keyword-badge">Autonomous Navigation</span>
+                        <span class="keyword-badge">Stability Control</span>
+                        <span class="keyword-badge">ZMP Control</span>
+                        <span class="keyword-badge">Robot Dynamics</span>
+                        <span class="keyword-badge">Webots</span>
                     </div>
                 </div>
             </div>

@@ -712,8 +712,8 @@
                         <span class="lang-ko">추가 지지 발을 능동적으로 활용하여 로봇팔만으로 수행하기 어려운 대형 물체 조작 및 이동이 가능한 전신 매니퓰레이션 프레임워크를 개발했습니다. 3발 지지 상태에서도 안정적인 보행을 위해 강화학습 기반 보행 제어를 적용하고, 엔드이펙터의 정밀한 제어를 위해 QP 기반 역기구학 제어를 결합했습니다. 이를 통해 대형 물체 운반뿐 아니라 자동으로 닫히는 문을 지지하며 조작하는 등 다양한 전신 협조 작업으로 확장할 수 있습니다.</span>
                     </p>
                     <div class="featured-media">
-                        <div class="video-thumbnail" onclick="openVideoModal('57nW-coCHr8')">
-                            <img src="https://img.youtube.com/vi/57nW-coCHr8/hqdefault.jpg" alt="Adaptive Foot-Assisted Manipulation">
+                        <div class="video-thumbnail" onclick="openVideoModal('5yw-J3kfPu4')">
+                            <img src="https://img.youtube.com/vi/5yw-J3kfPu4/hqdefault.jpg" alt="Adaptive Foot-Assisted Manipulation">
                             <div class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
                         </div>
                     </div>
@@ -755,8 +755,8 @@
                         <span class="lang-ko">인식된 문 손잡이의 6D 자세를 기반으로 접근, 파지, 문 개방, 이동 베이스 협조를 수행하는 자율 문 조작 시스템을 구현했습니다. YOLO 기반 손잡이 분할과 RGB-D 기반 기하학적 6D 자세 추정을 이용해 손잡이를 인식하고, 엔드이펙터 궤적 추종과 작업 공간 유지를 위한 이동 베이스 제어를 결합했습니다.</span>
                     </p>
                     <div class="featured-media">
-                        <div class="video-thumbnail" onclick="openVideoModal('DhTmtSsIG4I')">
-                            <img src="https://img.youtube.com/vi/DhTmtSsIG4I/hqdefault.jpg" alt="Autonomous Door Opening Pipeline">
+                        <div class="video-thumbnail" onclick="openVideoModal('ZIC2Kwe-WT4')">
+                            <img src="https://img.youtube.com/vi/ZIC2Kwe-WT4/hqdefault.jpg" alt="Autonomous Door Manipulation">
                             <div class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
                         </div>
                     </div>
@@ -868,7 +868,7 @@
                         <span class="keyword-badge">Simulator Calibration</span>
                         <span class="keyword-badge">Dynamics Modeling</span>
                         <span class="keyword-badge">Sim-to-Real</span>
-                        <span class="keyword-badge">Unsupervised Actuator Network (UAN)</span>
+                        <span class="keyword-badge">Unsupervised Actuator Net (UAN)</span>
                     </div>
                 </article>
             </div>
@@ -876,22 +876,20 @@
 
         <section id="expertise">
             <h2><span class="lang-en">Technical Expertise</span><span class="lang-ko">기술 역량</span></h2>
-            <p class="section-intro">
-                <span class="lang-en">Engineering domains I specialize in — each linked to Featured Projects that demonstrate the capability.</span>
-                <span class="lang-ko">전문 엔지니어링 영역이며, 각 항목은 해당 역량을 보여주는 대표 프로젝트와 연결되어 있습니다.</span>
-            </p>
             <div class="expertise-grid">
                 <div class="expertise-card">
-                    <h3>Whole-body Control</h3>
+                    <h3>Mobile Manipulation</h3>
                     <p class="expertise-desc">
-                        <span class="lang-en">QP-based coordination of locomotion and manipulation under kinematic and dynamic constraints.</span>
-                        <span class="lang-ko">운동학·동역학 제약 하에서 QP로 이동과 조작을 통합 제어합니다.</span>
+                        <span class="lang-en">Implementing mobile manipulation by jointly controlling a 6-DoF floating base and a 6-DoF manipulator through QP-based whole-body control.</span>
+                        <span class="lang-ko">QP 기반 Whole-body Control을 통해 이동형 베이스(6DoF)와 매니퓰레이터(6DoF)를 통합 제어하여 Mobile Manipulation을 구현합니다.</span>
                     </p>
                     <div class="expertise-tech">
                         <span class="keyword-badge">QP Optimization</span>
                         <span class="keyword-badge">Whole-body IK</span>
-                        <span class="keyword-badge">Motion Coordination</span>
                         <span class="keyword-badge">Self-collision Avoidance</span>
+                        <span class="keyword-badge">Singularity Avoidance</span>
+                        <span class="keyword-badge">Dynamics-based Control</span>
+                        <span class="keyword-badge">Compliance Control</span>
                     </div>
                     <div class="expertise-links">
                         <span class="lang-en">Related:</span><span class="lang-ko">관련:</span>
@@ -903,14 +901,14 @@
                 <div class="expertise-card">
                     <h3>Reinforcement Learning</h3>
                     <p class="expertise-desc">
-                        <span class="lang-en">Whole-body policy learning with curriculum design, transfer learning, and Isaac Gym / Isaac Lab training.</span>
-                        <span class="lang-ko">커리큘럼·전이 학습과 Isaac Gym / Isaac Lab 기반 전신 정책 학습입니다.</span>
+                        <span class="lang-en">Whole-body policy learning through curriculum design and policy transfer from locomotion to mobile manipulation.</span>
+                        <span class="lang-ko">단계적 커리큘럼과 정책 전이를 통해 보행 기술을 Mobile Manipulation으로 확장하는 강화학습을 수행합니다.</span>
                     </p>
                     <div class="expertise-tech">
-                        <span class="keyword-badge">PPO</span>
                         <span class="keyword-badge">Isaac Gym / Isaac Lab</span>
                         <span class="keyword-badge">Curriculum Learning</span>
-                        <span class="keyword-badge">Transfer Learning</span>
+                        <span class="keyword-badge">Hierarchical RL</span>
+                        <span class="keyword-badge">Policy Distillation</span>
                     </div>
                     <div class="expertise-links">
                         <span class="lang-en">Related:</span><span class="lang-ko">관련:</span>
@@ -920,34 +918,34 @@
                 </div>
 
                 <div class="expertise-card">
-                    <h3>Motion Planning</h3>
+                    <h3>Collision Avoidance</h3>
                     <p class="expertise-desc">
-                        <span class="lang-en">Door-opening trajectories and task sequencing for mobile manipulation pipelines.</span>
-                        <span class="lang-ko">모바일 매니퓰레이션 파이프라인을 위한 문 열기 궤적·태스크 시퀀싱입니다.</span>
+                        <span class="lang-en">Implements safe mobile manipulation through QP-based constraint optimization and real-time self-collision avoidance.</span>
+                        <span class="lang-ko">QP 기반 제약 최적화를 이용하여 자가 충돌을 회피하고 안전한 Mobile Manipulation을 구현합니다.</span>
                     </p>
                     <div class="expertise-tech">
-                        <span class="keyword-badge">Door Opening Trajectory</span>
-                        <span class="keyword-badge">Task Planning</span>
-                        <span class="keyword-badge">Collision-free Motion</span>
+                        <span class="keyword-badge">Self-collision Avoidance</span>
+                        <span class="keyword-badge">Constraint-based Motion</span>
+                        <span class="keyword-badge">Velocity-based Control</span>
                     </div>
                     <div class="expertise-links">
                         <span class="lang-en">Related:</span><span class="lang-ko">관련:</span>
-                        <a href="#featured-door">Door Pipeline</a><span class="sep">·</span>
-                        <a href="#featured-qp">QP Whole-body</a>
+                        <a href="#featured-qp">QP Whole-body</a><span class="sep">·</span>
+                        <a href="#featured-afam">AFAM</a>
                     </div>
                 </div>
 
                 <div class="expertise-card">
                     <h3>Vision-based Manipulation</h3>
                     <p class="expertise-desc">
-                        <span class="lang-en">RGB-D / hand-camera perception for handle detection, pose estimation, and closed-loop manipulation.</span>
-                        <span class="lang-ko">손잡이 검출·포즈 추정·폐루프 조작을 위한 RGB-D·핸드 카메라 인지입니다.</span>
+                        <span class="lang-en">Integrates RGB-D perception with whole-body control for autonomous door manipulation.</span>
+                        <span class="lang-ko">RGB-D 기반 객체 인지를 전신 협조 제어와 통합하여 자율 문 조작을 구현합니다.</span>
                     </p>
                     <div class="expertise-tech">
                         <span class="keyword-badge">RGB-D</span>
-                        <span class="keyword-badge">YOLO</span>
-                        <span class="keyword-badge">Hand Camera</span>
-                        <span class="keyword-badge">Door Handle Detection</span>
+                        <span class="keyword-badge">6D Pose Estimation</span>
+                        <span class="keyword-badge">Visual Servoing</span>
+                        <span class="keyword-badge">Whole-body Coordination</span>
                     </div>
                     <div class="expertise-links">
                         <span class="lang-en">Related:</span><span class="lang-ko">관련:</span>
@@ -959,15 +957,15 @@
                 <div class="expertise-card">
                     <h3>Sim-to-Real</h3>
                     <p class="expertise-desc">
-                        <span class="lang-en">Bridging simulation and hardware through SysID, domain matching, bandwidth analysis, and policy runners.</span>
-                        <span class="lang-ko">SysID·도메인 매칭·대역폭 분석·정책 러너로 시뮬레이션과 실기를 연결합니다.</span>
+                        <span class="lang-en">Reduces the Sim-to-Real gap through system identification, simulator calibration, and actuator dynamics modeling.</span>
+                        <span class="lang-ko">시스템 식별, 시뮬레이터 보정, 액추에이터 동역학 모델링을 통해 Sim-to-Real 격차를 줄입니다.</span>
                     </p>
                     <div class="expertise-tech">
-                        <span class="keyword-badge">SysID</span>
-                        <span class="keyword-badge">Domain Matching</span>
+                        <span class="keyword-badge">System Identification</span>
+                        <span class="keyword-badge">Simulator Calibration</span>
+                        <span class="keyword-badge">Dynamics Modeling</span>
                         <span class="keyword-badge">Bandwidth Analysis</span>
-                        <span class="keyword-badge">LPF</span>
-                        <span class="keyword-badge">MuJoCo Calibration</span>
+                        <span class="keyword-badge">Unsupervised Actuator Net (UAN)</span>
                     </div>
                     <div class="expertise-links">
                         <span class="lang-en">Related:</span><span class="lang-ko">관련:</span>
@@ -979,14 +977,14 @@
                 <div class="expertise-card">
                     <h3>Physical AI</h3>
                     <p class="expertise-desc">
-                        <span class="lang-en">Foundation models and VLA pipelines from dataset collection to fine-tuning and robot deployment.</span>
-                        <span class="lang-ko">데이터셋 수집부터 미세조정·로봇 배포까지의 파운데이션 모델·VLA 파이프라인입니다.</span>
+                        <span class="lang-en">Builds robot data collection and inference pipelines for Physical AI deployment.</span>
+                        <span class="lang-ko">Physical AI를 위한 로봇 데이터 수집 및 추론 파이프라인을 구축합니다.</span>
                     </p>
                     <div class="expertise-tech">
+                        <span class="keyword-badge">Shared Memory Bridge</span>
                         <span class="keyword-badge">LeRobot</span>
                         <span class="keyword-badge">VLA</span>
-                        <span class="keyword-badge">GR00T</span>
-                        <span class="keyword-badge">Data Collection</span>
+                        <span class="keyword-badge">Robot Deployment</span>
                     </div>
                     <div class="expertise-links">
                         <span class="lang-en">Related:</span><span class="lang-ko">관련:</span>
@@ -997,16 +995,14 @@
                 <div class="expertise-card">
                     <h3>Robot System Integration</h3>
                     <p class="expertise-desc">
-                        <span class="lang-en">End-to-end robot software architecture — middleware, streaming, shared memory, and language bridges for deployment.</span>
-                        <span class="lang-ko">미들웨어·스트리밍·공유 메모리·언어 브리지를 포함한 엔드투엔드 로봇 소프트웨어 아키텍처입니다.</span>
+                        <span class="lang-en">Integrates heterogeneous robot arm systems through ROS 2 to enable coordinated whole-body mobile manipulation.</span>
+                        <span class="lang-ko">ROS 2 기반으로 이종 로봇팔 시스템을 통합하여 전신 협조 매니퓰레이션을 구현합니다.</span>
                     </p>
                     <div class="expertise-tech">
-                        <span class="keyword-badge">ROS2</span>
-                        <span class="keyword-badge">RTSP</span>
-                        <span class="keyword-badge">Shared Memory</span>
-                        <span class="keyword-badge">C++</span>
-                        <span class="keyword-badge">Python Bridge</span>
-                        <span class="keyword-badge">Deployment</span>
+                        <span class="keyword-badge">ROS 2</span>
+                        <span class="keyword-badge">System Integration</span>
+                        <span class="keyword-badge">Kinematic Modeling</span>
+                        <span class="keyword-badge">API Integration</span>
                     </div>
                     <div class="expertise-links">
                         <span class="lang-en">Related:</span><span class="lang-ko">관련:</span>
@@ -1021,8 +1017,8 @@
         <section id="academic">
             <h2><span class="lang-en">Academic Research</span><span class="lang-ko">학술 연구</span></h2>
             <p class="section-intro">
-                <span class="lang-en">Graduate research on biped walking and humanoid locomotion — prior work, distinct from current industrial projects.</span>
-                <span class="lang-ko">이족 보행 및 휴머노이드 로코모션에 대한 석사 연구로, 현재의 산업 프로젝트와는 구분되는 이전 연구입니다.</span>
+                <span class="lang-en">Graduate research on humanoid walking pattern generation and control.</span>
+                <span class="lang-ko">휴머노이드 보행 패턴 생성 및 제어에 대한 석사 연구입니다.</span>
             </p>
             <div class="academic-grid">
                 <article class="academic-card">
@@ -1032,18 +1028,19 @@
                         <span class="lang-ko">이족 보행 패턴 생성 및 제어</span>
                     </h3>
                     <p class="academic-summary">
-                        <span class="lang-en">Developed a walking pattern generation and stabilization framework for humanoid robots based on LIPM and ZMP theory, validated under various gait cycles in Webots.</span>
-                        <span class="lang-ko">LIPM과 ZMP 이론 기반의 휴머노이드 보행 패턴 생성·안정화 프레임워크를 개발하고, Webots에서 다양한 보행 주기로 검증했습니다.</span>
+                        <span class="lang-en">Developed a walking pattern generation and stabilization framework for humanoid robots based on LIPM, ZMP, and Capture Point theory, validated under various gait cycles in Webots.</span>
+                        <span class="lang-ko">LIPM, ZMP, Capture Point 이론 기반의 휴머노이드 보행 패턴 생성·안정화 프레임워크를 개발하고, Webots에서 다양한 보행 주기로 검증했습니다.</span>
                     </p>
                     <div class="academic-meta">
                         <strong><span class="lang-en">Publication</span><span class="lang-ko">논문</span></strong><br>
-                        <span class="lang-en">Journal of Intelligent &amp; Robotic Systems (JINT), Springer — SCI-indexed</span>
-                        <span class="lang-ko">Journal of Intelligent &amp; Robotic Systems (JINT), Springer — SCI급</span>
+                        <span class="lang-en">Journal of Intelligent &amp; Robotic Systems (JINT), Springer — SCIE-indexed</span>
+                        <span class="lang-ko">Journal of Intelligent &amp; Robotic Systems (JINT), Springer — SCIE급</span>
                     </div>
                     <div class="project-keywords">
                         <span class="keyword-badge">Biped Walking</span>
                         <span class="keyword-badge">LIPM</span>
                         <span class="keyword-badge">ZMP Control</span>
+                        <span class="keyword-badge">Capture Point</span>
                         <span class="keyword-badge">Webots</span>
                     </div>
                     <a class="project-link" href="https://link.springer.com/article/10.1007/s10846-021-01468-1" target="_blank" rel="noopener">
@@ -1059,17 +1056,17 @@
                         <span class="lang-ko">스키 로봇 내비게이션</span>
                     </h3>
                     <p class="academic-summary">
-                        <span class="lang-en">Developed LiDAR-based gate detection, carving-turn control, and ZMP stability control for a humanoid alpine skiing robot, with a dynamics-aware skiing simulator.</span>
-                        <span class="lang-ko">휴머노이드 알파인 스키 로봇을 위해 LiDAR 기반 기문 인식, 카빙 턴 제어, ZMP 안정성 제어와 동역학 기반 스키 시뮬레이터를 개발했습니다.</span>
+                        <span class="lang-en">Developed LiDAR-based gate detection and ZMP stability control for a humanoid alpine skiing robot, and built a dynamics-aware skiing simulator that reproduces lean-dependent turn radius via external forces. Implemented lean-angle control to achieve a desired turn radius while descending the slope.</span>
+                        <span class="lang-ko">휴머노이드 알파인 스키 로봇을 위해 LiDAR 기반 기문 인식과 ZMP 안정성 제어를 개발하고, 좌우 기울기에 따라 변하는 turn radius를 외력으로 재현하는 동역학 기반 스키 시뮬레이터를 구축했습니다. 원하는 turn radius가 나오도록 로봇의 기울기를 조절하는 제어를 구현했습니다.</span>
                     </p>
                     <div class="academic-meta">
                         <strong><span class="lang-en">Publication</span><span class="lang-ko">논문</span></strong><br>
-                        <span class="lang-en">Sensors (MDPI) — SCI-indexed</span>
-                        <span class="lang-ko">Sensors (MDPI) — SCI급</span>
+                        <span class="lang-en">Sensors (MDPI) — SCIE-indexed</span>
+                        <span class="lang-ko">Sensors (MDPI) — SCIE급</span>
                     </div>
                     <div class="project-keywords">
                         <span class="keyword-badge">LiDAR</span>
-                        <span class="keyword-badge">Autonomous Navigation</span>
+                        <span class="keyword-badge">Skiing Simulator</span>
                         <span class="keyword-badge">ZMP Control</span>
                         <span class="keyword-badge">Webots</span>
                     </div>

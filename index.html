@@ -374,10 +374,16 @@
         }
 
         /* Technical Expertise */
-        .expertise-grid {
+        .expertise-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .expertise-row {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+            gap: 16px;
+            align-items: stretch;
         }
         .expertise-card {
             border: 1px solid #eee;
@@ -385,6 +391,9 @@
             padding: 22px 22px 18px;
             background: #fafafa;
             transition: border-color 0.25s, box-shadow 0.25s;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
         }
         .expertise-card:hover {
             border-color: #c5e0f5;
@@ -414,6 +423,7 @@
         .expertise-links {
             font-size: 0.88em;
             color: #666;
+            margin-top: auto;
         }
         .expertise-links a {
             color: #007acc;
@@ -426,6 +436,31 @@
         .expertise-links .sep {
             margin: 0 6px;
             color: #ccc;
+        }
+        .expertise-video {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            background: #eef3f7;
+            min-height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            min-width: 0;
+        }
+        .expertise-video-placeholder {
+            color: #7aa7c7;
+            font-size: 1.35em;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            user-select: none;
+        }
+        .expertise-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            background: #111;
         }
 
         /* Academic Research — quieter visual weight */
@@ -631,7 +666,12 @@
             .video-thumbnail {
                 max-width: 100%;
             }
-            .expertise-grid,
+            .expertise-row {
+                grid-template-columns: 1fr;
+            }
+            .expertise-video {
+                min-height: 200px;
+            }
             .academic-grid {
                 grid-template-columns: 1fr;
             }
@@ -719,8 +759,8 @@
                         <span class="lang-ko">4족 모바일 매니퓰레이터를 위한 QP 기반 전신 제어기를 개발하여, 로봇팔과 몸체 간 자가 충돌을 방지하면서 이동 중에도 엔드이펙터의 목표 위치와 자세를 유지하고 물체를 안정적으로 집을 수 있는 통합 제어를 구현했습니다.</span>
                     </p>
                     <div class="featured-media">
-                        <div class="video-thumbnail" onclick="openVideoModal('Ug8kAqgXcaI')">
-                            <img src="https://img.youtube.com/vi/Ug8kAqgXcaI/hqdefault.jpg" alt="Whole-body manipulation demo">
+                        <div class="video-thumbnail" onclick="openVideoModal('92rM1Dh-yAI')">
+                            <img src="https://img.youtube.com/vi/92rM1Dh-yAI/hqdefault.jpg" alt="Whole-body manipulation demo">
                             <div class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
                         </div>
                     </div>
@@ -928,139 +968,188 @@
 
         <section id="expertise">
             <h2><span class="lang-en">Technical Expertise</span><span class="lang-ko">기술 역량</span></h2>
-            <div class="expertise-grid">
-                <div class="expertise-card">
-                    <h3>Mobile Manipulation</h3>
-                    <p class="expertise-desc">
-                        <span class="lang-en">Implementing mobile manipulation by jointly controlling a 6-DoF floating base and a 6-DoF manipulator through QP-based whole-body control.</span>
-                        <span class="lang-ko">QP 기반 Whole-body Control을 통해 이동형 베이스(6DoF)와 매니퓰레이터(6DoF)를 통합 제어하여 Mobile Manipulation을 구현합니다.</span>
-                    </p>
-                    <div class="expertise-tech">
-                        <span class="keyword-badge">QP Optimization</span>
-                        <span class="keyword-badge">Whole-body IK</span>
-                        <span class="keyword-badge">Self-collision Avoidance</span>
-                        <span class="keyword-badge">Singularity Avoidance</span>
-                        <span class="keyword-badge">Dynamics-based Control</span>
-                        <span class="keyword-badge">Compliance Control</span>
+            <div class="expertise-list">
+                <div class="expertise-row" id="expertise-mobile-manipulation">
+                    <div class="expertise-card">
+                        <h3>Mobile Manipulation</h3>
+                        <p class="expertise-desc">
+                            <span class="lang-en">Implementing mobile manipulation by jointly controlling a 6-DoF floating base and a 6-DoF manipulator through QP-based whole-body control.</span>
+                            <span class="lang-ko">QP 기반 Whole-body Control을 통해 이동형 베이스(6DoF)와 매니퓰레이터(6DoF)를 통합 제어하여 Mobile Manipulation을 구현합니다.</span>
+                        </p>
+                        <div class="expertise-tech">
+                            <span class="keyword-badge">QP Optimization</span>
+                            <span class="keyword-badge">Whole-body IK</span>
+                            <span class="keyword-badge">Self-collision Avoidance</span>
+                            <span class="keyword-badge">Singularity Avoidance</span>
+                            <span class="keyword-badge">Dynamics-based Control</span>
+                            <span class="keyword-badge">Compliance Control</span>
+                        </div>
+                        <div class="expertise-links">
+                            <span class="lang-en">Related:</span><span class="lang-ko">관련:</span>
+                            <a href="#featured-qp">QP Whole-body</a><span class="sep">·</span>
+                            <a href="#featured-afam">AFAM</a>
+                        </div>
                     </div>
-                    <div class="expertise-links">
-                        <span class="lang-en">Related:</span><span class="lang-ko">관련:</span>
-                        <a href="#featured-qp">QP Whole-body</a><span class="sep">·</span>
-                        <a href="#featured-afam">AFAM</a>
-                    </div>
-                </div>
-
-                <div class="expertise-card">
-                    <h3>Reinforcement Learning</h3>
-                    <p class="expertise-desc">
-                        <span class="lang-en">Whole-body policy learning through curriculum design and policy transfer from locomotion to mobile manipulation.</span>
-                        <span class="lang-ko">단계적 커리큘럼과 정책 전이를 통해 보행 기술을 Mobile Manipulation으로 확장하는 강화학습을 수행합니다.</span>
-                    </p>
-                    <div class="expertise-tech">
-                        <span class="keyword-badge">Isaac Gym / Isaac Lab</span>
-                        <span class="keyword-badge">Curriculum Learning</span>
-                        <span class="keyword-badge">Hierarchical RL</span>
-                        <span class="keyword-badge">Policy Distillation</span>
-                    </div>
-                    <div class="expertise-links">
-                        <span class="lang-en">Related:</span><span class="lang-ko">관련:</span>
-                        <a href="#featured-afam">AFAM</a><span class="sep">·</span>
-                        <a href="#featured-sysid">SysID / Sim-to-Real</a>
+                    <div class="expertise-video">
+                        <video autoplay muted loop playsinline>
+                            <source src="videos/expertise/1_mobile_manipulation.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
 
-                <div class="expertise-card">
-                    <h3>Collision Avoidance</h3>
-                    <p class="expertise-desc">
-                        <span class="lang-en">Implements safe mobile manipulation through QP-based constraint optimization and real-time self-collision avoidance.</span>
-                        <span class="lang-ko">QP 기반 제약 최적화를 이용하여 자가 충돌을 회피하고 안전한 Mobile Manipulation을 구현합니다.</span>
-                    </p>
-                    <div class="expertise-tech">
-                        <span class="keyword-badge">Self-collision Avoidance</span>
-                        <span class="keyword-badge">Constraint-based Motion</span>
-                        <span class="keyword-badge">Velocity-based Control</span>
+                <div class="expertise-row" id="expertise-rl">
+                    <div class="expertise-card">
+                        <h3>Reinforcement Learning</h3>
+                        <p class="expertise-desc">
+                            <span class="lang-en">Whole-body policy learning through curriculum design and policy transfer from locomotion to mobile manipulation.</span>
+                            <span class="lang-ko">단계적 커리큘럼과 정책 전이를 통해 보행 기술을 Mobile Manipulation으로 확장하는 강화학습을 수행합니다.</span>
+                        </p>
+                        <div class="expertise-tech">
+                            <span class="keyword-badge">Isaac Gym / Isaac Lab</span>
+                            <span class="keyword-badge">Curriculum Learning</span>
+                            <span class="keyword-badge">Hierarchical RL</span>
+                            <span class="keyword-badge">Policy Distillation</span>
+                        </div>
+                        <div class="expertise-links">
+                            <span class="lang-en">Related:</span><span class="lang-ko">관련:</span>
+                            <a href="#featured-afam">AFAM</a><span class="sep">·</span>
+                            <a href="#featured-sysid">SysID / Sim-to-Real</a>
+                        </div>
                     </div>
-                    <div class="expertise-links">
-                        <span class="lang-en">Related:</span><span class="lang-ko">관련:</span>
-                        <a href="#featured-qp">QP Whole-body</a><span class="sep">·</span>
-                        <a href="#featured-afam">AFAM</a>
-                    </div>
-                </div>
-
-                <div class="expertise-card">
-                    <h3>Vision-based Manipulation</h3>
-                    <p class="expertise-desc">
-                        <span class="lang-en">Integrates RGB-D perception with whole-body control for autonomous door manipulation.</span>
-                        <span class="lang-ko">RGB-D 기반 객체 인지를 전신 협조 제어와 통합하여 자율 문 조작을 구현합니다.</span>
-                    </p>
-                    <div class="expertise-tech">
-                        <span class="keyword-badge">RGB-D</span>
-                        <span class="keyword-badge">6D Pose Estimation</span>
-                        <span class="keyword-badge">Visual Servoing</span>
-                        <span class="keyword-badge">Whole-body Coordination</span>
-                    </div>
-                    <div class="expertise-links">
-                        <span class="lang-en">Related:</span><span class="lang-ko">관련:</span>
-                        <a href="#featured-door">Door Pipeline</a><span class="sep">·</span>
-                        <a href="#featured-qp">QP Whole-body</a>
+                    <div class="expertise-video">
+                        <video autoplay muted loop playsinline>
+                            <source src="videos/expertise/2_reinforcement_learning.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
 
-                <div class="expertise-card">
-                    <h3>Sim-to-Real</h3>
-                    <p class="expertise-desc">
-                        <span class="lang-en">Reduces the Sim-to-Real gap through system identification, simulator calibration, and actuator dynamics modeling.</span>
-                        <span class="lang-ko">시스템 식별, 시뮬레이터 보정, 액추에이터 동역학 모델링을 통해 Sim-to-Real 격차를 줄입니다.</span>
-                    </p>
-                    <div class="expertise-tech">
-                        <span class="keyword-badge">System Identification</span>
-                        <span class="keyword-badge">Simulator Calibration</span>
-                        <span class="keyword-badge">Dynamics Modeling</span>
-                        <span class="keyword-badge">Bandwidth Analysis</span>
-                        <span class="keyword-badge">Unsupervised Actuator Net (UAN)</span>
+                <div class="expertise-row" id="expertise-vision">
+                    <div class="expertise-card">
+                        <h3>Vision-based Manipulation</h3>
+                        <p class="expertise-desc">
+                            <span class="lang-en">Integrates RGB-D perception with whole-body control for autonomous door manipulation.</span>
+                            <span class="lang-ko">RGB-D 기반 객체 인지를 전신 협조 제어와 통합하여 자율 문 조작을 구현합니다.</span>
+                        </p>
+                        <div class="expertise-tech">
+                            <span class="keyword-badge">RGB-D</span>
+                            <span class="keyword-badge">6D Pose Estimation</span>
+                            <span class="keyword-badge">Visual Servoing</span>
+                            <span class="keyword-badge">Whole-body Coordination</span>
+                        </div>
+                        <div class="expertise-links">
+                            <span class="lang-en">Related:</span><span class="lang-ko">관련:</span>
+                            <a href="#featured-door">Door Pipeline</a><span class="sep">·</span>
+                            <a href="#featured-qp">QP Whole-body</a>
+                        </div>
                     </div>
-                    <div class="expertise-links">
-                        <span class="lang-en">Related:</span><span class="lang-ko">관련:</span>
-                        <a href="#featured-sysid">System Identification</a><span class="sep">·</span>
-                        <a href="#featured-afam">AFAM</a>
-                    </div>
-                </div>
-
-                <div class="expertise-card">
-                    <h3>Physical AI</h3>
-                    <p class="expertise-desc">
-                        <span class="lang-en">Builds robot data collection and inference pipelines for Physical AI deployment.</span>
-                        <span class="lang-ko">Physical AI를 위한 로봇 데이터 수집 및 추론 파이프라인을 구축합니다.</span>
-                    </p>
-                    <div class="expertise-tech">
-                        <span class="keyword-badge">Shared Memory Bridge</span>
-                        <span class="keyword-badge">LeRobot</span>
-                        <span class="keyword-badge">VLA</span>
-                        <span class="keyword-badge">Robot Deployment</span>
-                    </div>
-                    <div class="expertise-links">
-                        <span class="lang-en">Related:</span><span class="lang-ko">관련:</span>
-                        <a href="#featured-physical-ai">Physical AI Deployment</a>
+                    <div class="expertise-video">
+                        <video autoplay muted loop playsinline>
+                            <source src="videos/expertise/3_vision_based_manipulation.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
 
-                <div class="expertise-card">
-                    <h3>Robot System Integration</h3>
-                    <p class="expertise-desc">
-                        <span class="lang-en">Integrates heterogeneous robot arm systems through ROS 2 to enable coordinated whole-body mobile manipulation.</span>
-                        <span class="lang-ko">ROS 2 기반으로 이종 로봇팔 시스템을 통합하여 전신 협조 매니퓰레이션을 구현합니다.</span>
-                    </p>
-                    <div class="expertise-tech">
-                        <span class="keyword-badge">ROS 2</span>
-                        <span class="keyword-badge">System Integration</span>
-                        <span class="keyword-badge">Kinematic Modeling</span>
-                        <span class="keyword-badge">API Integration</span>
+                <div class="expertise-row" id="expertise-collision">
+                    <div class="expertise-card">
+                        <h3>Collision Avoidance</h3>
+                        <p class="expertise-desc">
+                            <span class="lang-en">Implements safe mobile manipulation through QP-based constraint optimization and real-time self-collision avoidance.</span>
+                            <span class="lang-ko">QP 기반 제약 최적화를 이용하여 자가 충돌을 회피하고 안전한 Mobile Manipulation을 구현합니다.</span>
+                        </p>
+                        <div class="expertise-tech">
+                            <span class="keyword-badge">Self-collision Avoidance</span>
+                            <span class="keyword-badge">Constraint-based Motion</span>
+                            <span class="keyword-badge">Velocity-based Control</span>
+                        </div>
+                        <div class="expertise-links">
+                            <span class="lang-en">Related:</span><span class="lang-ko">관련:</span>
+                            <a href="#featured-qp">QP Whole-body</a><span class="sep">·</span>
+                            <a href="#featured-afam">AFAM</a>
+                        </div>
                     </div>
-                    <div class="expertise-links">
-                        <span class="lang-en">Related:</span><span class="lang-ko">관련:</span>
-                        <a href="#featured-physical-ai">Physical AI Deployment</a><span class="sep">·</span>
-                        <a href="#featured-qp">QP Whole-body</a><span class="sep">·</span>
-                        <a href="#featured-sysid">SysID</a>
+                    <div class="expertise-video">
+                        <video autoplay muted loop playsinline>
+                            <source src="videos/expertise/4_collision_avoidance.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <div class="expertise-row" id="expertise-sim2real">
+                    <div class="expertise-card">
+                        <h3>Sim-to-Real</h3>
+                        <p class="expertise-desc">
+                            <span class="lang-en">Reduces the Sim-to-Real gap through system identification, simulator calibration, and actuator dynamics modeling.</span>
+                            <span class="lang-ko">시스템 식별, 시뮬레이터 보정, 액추에이터 동역학 모델링을 통해 Sim-to-Real 격차를 줄입니다.</span>
+                        </p>
+                        <div class="expertise-tech">
+                            <span class="keyword-badge">System Identification</span>
+                            <span class="keyword-badge">Simulator Calibration</span>
+                            <span class="keyword-badge">Dynamics Modeling</span>
+                            <span class="keyword-badge">Bandwidth Analysis</span>
+                            <span class="keyword-badge">Unsupervised Actuator Net (UAN)</span>
+                        </div>
+                        <div class="expertise-links">
+                            <span class="lang-en">Related:</span><span class="lang-ko">관련:</span>
+                            <a href="#featured-sysid">System Identification</a><span class="sep">·</span>
+                            <a href="#featured-afam">AFAM</a>
+                        </div>
+                    </div>
+                    <div class="expertise-video">
+                        <video autoplay muted loop playsinline>
+                            <source src="videos/expertise/5_sim_to_real.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <div class="expertise-row" id="expertise-physical-ai">
+                    <div class="expertise-card">
+                        <h3>Physical AI</h3>
+                        <p class="expertise-desc">
+                            <span class="lang-en">Builds robot data collection and inference pipelines for Physical AI deployment.</span>
+                            <span class="lang-ko">Physical AI를 위한 로봇 데이터 수집 및 추론 파이프라인을 구축합니다.</span>
+                        </p>
+                        <div class="expertise-tech">
+                            <span class="keyword-badge">Shared Memory Bridge</span>
+                            <span class="keyword-badge">LeRobot</span>
+                            <span class="keyword-badge">VLA</span>
+                            <span class="keyword-badge">Robot Deployment</span>
+                        </div>
+                        <div class="expertise-links">
+                            <span class="lang-en">Related:</span><span class="lang-ko">관련:</span>
+                            <a href="#featured-physical-ai">Physical AI Deployment</a>
+                        </div>
+                    </div>
+                    <div class="expertise-video">
+                        <video autoplay muted loop playsinline>
+                            <source src="videos/expertise/6_physical_ai.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <div class="expertise-row" id="expertise-system-integration">
+                    <div class="expertise-card">
+                        <h3>Robot System Integration</h3>
+                        <p class="expertise-desc">
+                            <span class="lang-en">Integrates heterogeneous robot arm systems through ROS 2 to enable coordinated whole-body mobile manipulation.</span>
+                            <span class="lang-ko">ROS 2 기반으로 이종 로봇팔 시스템을 통합하여 전신 협조 매니퓰레이션을 구현합니다.</span>
+                        </p>
+                        <div class="expertise-tech">
+                            <span class="keyword-badge">ROS 2</span>
+                            <span class="keyword-badge">System Integration</span>
+                            <span class="keyword-badge">Kinematic Modeling</span>
+                            <span class="keyword-badge">API Integration</span>
+                        </div>
+                        <div class="expertise-links">
+                            <span class="lang-en">Related:</span><span class="lang-ko">관련:</span>
+                            <a href="#featured-physical-ai">Physical AI Deployment</a><span class="sep">·</span>
+                            <a href="#featured-qp">QP Whole-body</a><span class="sep">·</span>
+                            <a href="#featured-sysid">SysID</a>
+                        </div>
+                    </div>
+                    <div class="expertise-video">
+                        <video autoplay muted loop playsinline>
+                            <source src="videos/expertise/7_robot_system_integration.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
             </div>
@@ -1227,8 +1316,8 @@
             else video.addEventListener('loadedmetadata', apply);
         }
 
-        function playAcademicVideos() {
-            document.querySelectorAll('.academic-media video').forEach((video) => {
+        function playInlineLoopVideos() {
+            document.querySelectorAll('.academic-media video, .expertise-video video').forEach((video) => {
                 video.muted = true;
                 video.loop = true;
                 video.playsInline = true;
@@ -1242,7 +1331,7 @@
         }
 
         syncAcademicMediaRatio();
-        playAcademicVideos();
+        playInlineLoopVideos();
     </script>
 </body>
 </html>
